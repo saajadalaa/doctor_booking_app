@@ -8,7 +8,7 @@ flutter pub get
 Usage 
 
 ```
-flutter run
+flutter run 
 ```
 
 Live Demo : [Flutter Doctor Booking App Web Demo](http://bit.ly/2uAwmLd)
