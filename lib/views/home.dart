@@ -50,8 +50,8 @@ class HomePageState extends State<HomePage> {
               Text(
                 "Find Your \nConsultation",
                 style: TextStyle(
-                    color: Colors.black87.withOpacity(0.8),
-                    fontSize: 30,
+                    color: Colors.black87.withOpacity(1),
+                    fontSize: 20,
                     fontWeight: FontWeight.w600),
               ),
               SizedBox(
@@ -71,7 +71,7 @@ class HomePageState extends State<HomePage> {
                     ),
                     Text(
                       "Search",
-                      style: TextStyle(color: Colors.grey, fontSize: 19),
+                      style: TextStyle(color: Colors.grey, fontSize: 14),
                     )
                   ],
                 ),
@@ -83,7 +83,7 @@ class HomePageState extends State<HomePage> {
                 "Categories",
                 style: TextStyle(
                     color: Colors.black87.withOpacity(0.8),
-                    fontSize: 25,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600),
               ),
               SizedBox(
@@ -130,7 +130,7 @@ class HomePageState extends State<HomePage> {
                 "Doctos",
                 style: TextStyle(
                     color: Colors.black87.withOpacity(0.8),
-                    fontSize: 25,
+                    fontSize: 18,
                     fontWeight: FontWeight.w600),
               ),
               SizedBox(
@@ -171,12 +171,12 @@ class _CategorieTileState extends State<CategorieTile> {
         height: 30,
         decoration: BoxDecoration(
             color: widget.isSelected! ? Color(0xffFFD0AA) : Colors.white,
-            borderRadius: BorderRadius.circular(30)),
+            borderRadius: BorderRadius.circular(5)),
         child: Text(
           widget.categorie!,
           style: TextStyle(
               color:
-                  widget.isSelected! ? Color(0xffFC9535) : Color(0xffA1A1A1)),
+                  widget.isSelected! ? Colors.white : Color(0xffA1A1A1)),
         ),
       ),
     );
@@ -198,10 +198,24 @@ class SpecialistTile extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: 150,
-      margin: EdgeInsets.only(right: 16),
-      decoration: BoxDecoration(
-          color: backColor, borderRadius: BorderRadius.circular(24)),
+      margin: EdgeInsets.only(right: 10, bottom: 5),
       padding: EdgeInsets.only(top: 16, right: 16, left: 16),
+      b\
+      decoration: BoxDecoration(
+          color: backColor,
+          borderRadius: BorderRadius.circular(5),
+          boxShadow: [
+      BoxShadow(
+      color: Colors.black.withOpacity(0.2), // Adjust opacity for a softer shadow
+      spreadRadius: 1, // How much the shadow spreads
+      blurRadius: 1, // How blurred the shadow is
+      offset: Offset(2, 1), // Position of the shadow (x, y)
+    ),
+    ],
+      border
+      ),
+
+
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -214,7 +228,7 @@ class SpecialistTile extends StatelessWidget {
           ),
           Text(
             "$noOfDoctors Doctors",
-            style: TextStyle(color: Colors.white, fontSize: 13),
+            style: TextStyle(color: Colors.white, fontSize: 14),
           ),
           Image.asset(
             imgAssetPath!,
@@ -253,14 +267,14 @@ class DoctorsTile extends StatelessWidget {
               children: <Widget>[
                 Text(
                   "Dr. Stefeni Albert",
-                  style: TextStyle(color: Color(0xffFC9535), fontSize: 19),
+                  style: TextStyle(color: Color(0xffFC9535), fontSize: 14),
                 ),
                 SizedBox(
                   height: 2,
                 ),
                 Text(
                   "Heart Speailist",
-                  style: TextStyle(fontSize: 15),
+                  style: TextStyle(fontSize: 12),
                 )
               ],
             ),
@@ -274,7 +288,7 @@ class DoctorsTile extends StatelessWidget {
                 "Call",
                 style: TextStyle(
                     color: Colors.white,
-                    fontSize: 13,
+                    fontSize: 14,
                     fontWeight: FontWeight.w500),
               ),
             )
